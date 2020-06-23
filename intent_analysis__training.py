@@ -48,8 +48,8 @@ Labels are at the level of tokens created by the base BertTokenizer
 
 """
 
-document = sys.argv[0]
-epochs = sys.argv[1]
+document = sys.argv[1]
+epochs = sys.argv[2]
 
 #Read in text, create inclusion and exclusion columns, and clean
 df = pd.read_csv(str(document))

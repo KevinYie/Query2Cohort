@@ -33,6 +33,7 @@ CSV must have query and cohort columns with each entry in cohort structured as a
 Parameters
 ----------
 document: Path to csv with "query" and "cohort"
+epochs: Number of training epochs
 
 
 Returns
@@ -48,6 +49,7 @@ Labels are at the level of tokens created by the base BertTokenizer
 """
 
 document = sys.argv[1]
+epochs = sys.argv[2]
 
 # Read in text, create inclusion and exclusion columns, and clean
 df = pd.read_csv(str(document))
@@ -196,7 +198,6 @@ optimizer = AdamW(
 )
 
 # Setting training definition
-epochs = 6
 max_grad_norm = 1.0
 
 # Total number of training steps is number of batches * number of epochs.
