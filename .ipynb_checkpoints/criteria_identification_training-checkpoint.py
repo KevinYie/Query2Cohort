@@ -102,7 +102,6 @@ df["labels"] = final_labels
 df.to_csv("final.csv", index = False)
 
 
-
 """
 Finetuning BERT for Cohort Identification
 

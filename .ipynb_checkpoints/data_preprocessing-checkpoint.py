@@ -50,7 +50,7 @@ Labels are at the level of tokens created by the base BertTokenizer
 document = sys.argv[1]
 
 # Read in text, create inclusion and exclusion columns, and clean
-df = pd.read_csv(str(document))
+df = pd.read_csv(str(documents))
 df = df.reset_index()
 df.columns = ["query", "cohort", "intent"]
 df["cohort"] = df["cohort"].apply(json.loads) 
@@ -100,7 +100,6 @@ for index, row in df.iterrows():
 df["labels"] = final_labels
 
 df.to_csv("final.csv", index = False)
-
 
 
 """
