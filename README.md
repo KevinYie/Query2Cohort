@@ -2,7 +2,7 @@
 
 Interpreting Natural Language Clinical Queries
 
-Note: Due to being a consulting project, data and other information is under NDA. This repository contains only the notebooks demonstrating model performance as well as scripts required to train models on own data.
+Note: Due to being a consulting project, data and other information is under NDA. This repository contains only the notebooks demonstrating model performance as well as scripts required to train models on own data. Please refer to Excluded Code subtitle for more information to what has been excluded for now. 
 
 **Company**: [Omic](Omic.ai)
 
@@ -42,6 +42,12 @@ To use the scripts for inference, user can pass in a csv with one column titled 
 criteria_identification_inference.py data.csv
 ```
 
+## Excluded Code
+
+Due to NDA, notebook/script for entity normalization algorithm with BioWordVec embeddings and WMD against OMOP concepts will not be publically uploaded at present. Please reach out to with the provided contact information for if you wish to discuss.
+
+Due to NDA, performance on test/production data as well as associated code/notebooks are not at liberty to be disclosed. However, results are overall promising and their general performance can be discussed in private through the following contact information.
+
 ## Contact
 
-For questions, feel free to reach out to Kevin.E.Yie@gmail.com. Thank you!
+For questions or comments, feel free to reach out to kevin.e.yie@gmail.com. Thank you!
