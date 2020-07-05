@@ -57,15 +57,17 @@ df = df.reset_index()
 df.columns = ["query", "cohort", "intent"]
 df["cohort"] = df["cohort"].apply(json.loads) 
 
+#Create empty columns for inclusion and exclusion criteria
 df["inclusion"] = ["None"]*len(df)
 df["exclusion"] = ["None"]*len(df)
 
+#Add inclusion and exclusion criteria from the cohort column to their own columns
 cohort = df["cohort"]
 for x in range(len(cohort)):
     df["inclusion"][x] = cohort[x]["inclusion"]
     df["exclusion"][x] = cohort[x]["exclusion"]
     
-
+#Clean text using regex patterns
 def clean_text(x):
     x = re.sub("-", "", x)
     x = re.sub("\(", " ", x)
@@ -74,12 +76,16 @@ def clean_text(x):
     
 df["query"] = df["query"].apply(clean_text)
 
+
+
+
 # Tokenizer
-tokenizer = BertTokenizer.from_pretrained('bert-base-cased',do_lower_case=True)
+tokenizer = BertTokenizer.from_pretrained('bert-base-cased', do_lower_case=True)
 
 # Creating labels for each token based on exclusion and inclusion criteria
 final_labels = []
 
+# Iterates through the queries and tokenizes the inclusion and exlusion criteria
 for index, row in df.iterrows():
     
     tokenized_query = tokenizer.tokenize(row["query"])
@@ -87,6 +93,7 @@ for index, row in df.iterrows():
     tokenized_inclusion = [tokenizer.tokenize(x) for x in row["inclusion"]]
     tokenized_exclusion = [tokenizer.tokenize(x) for x in row["exclusion"]]
     
+    # If the tokens in a query match the inclusion or exclusion criteria, they are labelled as such
     for criteria in tokenized_inclusion:
         for token in range(int(len(tokenized_query)-len(criteria))+1):
             if tokenized_query[token:token+len(criteria)] == criteria:
