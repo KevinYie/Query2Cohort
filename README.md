@@ -44,7 +44,7 @@ criteria_identification_inference.py data.csv
 
 ## Excluded Code
 
-Due to NDA, notebook/script for entity normalization algorithm with BioWordVec embeddings and WMD against OMOP concepts will not be publically uploaded at present. Please reach out to with the provided contact information for if you wish to discuss.
+Due to NDA, notebook/script for entity normalization algorithm with BioWordVec embeddings and WMD against OMOP concepts will not be publically uploaded at present. Please reach out to the provided contact information if you wish to discuss.
 
 Due to NDA, performance on test/production data as well as associated code/notebooks are not at liberty to be disclosed. However, results are overall promising and their general performance can be discussed in private through the following contact information.
 
