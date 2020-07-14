@@ -43,6 +43,7 @@ criteria_identification_inference.py data.csv
 ```
 
 ## Excluded Code
+Anticipated time for NDA update is week of 7-13-20.
 
 Due to NDA, notebook/script for entity normalization algorithm with BioWordVec embeddings and WMD against ICD concepts will not be publically uploaded at present. On full release of Query2Cohort, this code will be pushed. In the mean time, please reach out to the provided contact information if you wish to discuss this novel algorithm.
 
